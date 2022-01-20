@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_location
+    columns:
+      - name: address_sk
+        tests:
+          - unique
+          - not_null
+      - name: addressid
+        tests:
+          - unique
+          - not_null
