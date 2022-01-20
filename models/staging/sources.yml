@@ -6,10 +6,119 @@ sources:
     tables:
       - name: person_address
         description: >
-          One record per order. Includes cancelled and deleted orders.
+          Person address table.
         columns:
           - name: addressid
-            description: Primary key of the orders table
+            description: Primary key of the person address table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: person_stateprovince
+        description: >
+          Person State Province table.
+        columns:
+          - name: stateprovinceid
+            description: Primary key of the person state province table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: person_countryregion
+        description: >
+          Person country region table.
+        columns:
+          - name: countryregioncode
+            description: Primary key of the person country region table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time   
+      - name: sales_salesreason
+        description: >
+          Sales sales reason table.
+        columns:
+          - name: salesreasonid
+            description: Primary key of the sales sales reason table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_salesorderdetail
+        description: >
+          Sales sales order detail table.
+        columns:
+          - name: salesorderdetailid
+            description: Primary key of the sales sales order detail table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: production_product
+        description: >
+          Production product table.
+        columns:
+          - name: productid
+            description: Primary key of the production product table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_salesorderheader
+        description: >
+          Sales orders header table.
+        columns:
+          - name: salesorderid
+            description: Primary key of the sales order header table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_salesorderheadersalesreason
+        description: >
+          Sales order header sales reason table.
+        columns:
+          - name: salesorderid
+            description: Primary key of the sales order header sales reason table
+            tests:
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_creditcard
+        description: >
+           Sales credict card table.
+        columns:
+          - name: creditcardid
+            description: Primary key of the  sales credict card table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_store
+        description: >
+           Sales store table.
+        columns:
+          - name: businessentityid
+            description: Primary key of the  sales store table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_customer
+        description: >
+           Sales customer table.
+        columns:
+          - name: customerid
+            description: Primary key of the  sales customer table
             tests:
               - unique
               - not_null

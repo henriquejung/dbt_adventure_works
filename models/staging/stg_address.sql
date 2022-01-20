@@ -7,5 +7,6 @@ with
             , stateprovinceid
         from {{ source('adventure_kondado_source', 'person_address') }}
     )
+    
 select *
 from source_data

@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_salesorderheader
+    columns:
+      - name: salesorderid
+        tests:
+          - unique
+          - not_null
+      - name: address_fk
+        tests:
+          - relationships:
+              to: ref('dim_location')
+              field: address_sk
+      - name: customer_fk
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_sk
+      - name: credit_fk
+        tests:
+          - relationships:
+              to: ref('dim_creditcard')
+              field: creditcard_sk
+      - name: bridgedetail_fk
+        tests:
+          - relationships:
+              to: ref('bridge_detail')
+              field: orders_sk
+      - name: bridgereason_fk
+        tests:
+          - relationships:
+              to: ref('bridge_reason')
+              field: orders_sk
